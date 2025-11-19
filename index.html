@@ -43,7 +43,98 @@
         text-decoration: none;
         font-size: 15px;
         font-weight: 500;
+    }/* ===========================
+   📱 MOBILE RESPONSIVE
+   =========================== */
+
+/* Large Tablets & Small Laptops */
+@media (max-width: 1024px) {
+    .hero-content h1 {
+        font-size: 42px;
     }
+    nav {
+        padding: 15px 30px;
+    }
+    #about .flex {
+        padding: 0 30px 50px;
+    }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+    nav ul {
+        display: none; /* hide menu for mobile-style */
+    }
+    .hero-content h1 {
+        font-size: 34px;
+        line-height: 42px;
+    }
+    .hero-content p {
+        font-size: 16px;
+    }
+    .corona-circle {
+        width: 180px;
+        height: 180px;
+    }
+    #services .box-container,
+    #portfolio .grid {
+        padding: 0 30px;
+        grid-template-columns: 1fr 1fr;
+    }
+    #about .flex {
+        flex-direction: column;
+        text-align: center;
+    }
+    #about img {
+        width: 100%;
+        max-width: 350px;
+        margin: auto;
+    }
+}
+
+/* Phones */
+@media (max-width: 480px) {
+    header {
+        padding: 0 15px;
+    }
+    .hero-content h1 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+    .hero-content p {
+        font-size: 14px;
+    }
+    .corona-circle {
+        width: 150px;
+        height: 150px;
+    }
+    #services .box-container,
+    #portfolio .grid {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+    .section-title {
+        font-size: 28px;
+    }
+    input, textarea {
+        font-size: 14px;
+    }
+    nav .logo {
+        font-size: 22px;
+    }
+}
+
+/* Small Phones (optional but premium touch) */
+@media (max-width: 360px) {
+    .hero-content h1 {
+        font-size: 24px;
+    }
+    .corona-circle {
+        width: 120px;
+        height: 120px;
+    }
+}
+
 
     /* ======================= HERO SECTION ========================= */
     header {
