@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Professional Company Portfolio</title>
+
+<style>
+    * {
+        margin: 0; padding: 0;
+        box-sizing: border-box;
+        font-family: "Poppins", sans-serif;
+    }
+
+    body { background: #f7f7f7; }
+
+    /* ========================= NAVBAR ============================= */
+    nav {
+        width: 100%;
+        padding: 20px 50px;
+        display: flex;
+        justify-content: space-between;
+        position: fixed;
+        top: 0;
+        background: #00000080;
+        backdrop-filter: blur(10px);
+        z-index: 10;
+    }
+    nav .logo {
+        font-size: 26px;
+        color: #fff;
+        font-weight: 600;
+    }
+    nav ul {
+        display: flex;
+        gap: 25px;
+    }
+    nav ul li {
+        list-style: none;
+    }
+    nav ul li a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 15px;
+        font-weight: 500;
+    }
+
+    /* ======================= HERO SECTION ========================= */
+    header {
+        height: 100vh;
+        background: linear-gradient(120deg,#00111f,#003a64,#0078a3);
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        text-align: center;
+        padding: 0 20px;
+    }
+
+    /* Corona-like animated glowing circle */
+    .corona-circle {
+        position: absolute;
+        width: 250px;
+        height: 250px;
+        border-radius: 50%;
+        background: radial-gradient(circle, #00eaff, #007a8a);
+        box-shadow: 0 0 80px #00eaff;
+        animation: deform 4s infinite ease-in-out;
+        filter: blur(2px);
+        z-index: 1;
+    }
+
+    @keyframes deform {
+        0% { transform: scale(1) rotate(0deg); border-radius: 55% 45% 60% 40%; }
+        25% { transform: scale(1.2) rotate(5deg); border-radius: 60% 40% 50% 50%; }
+        50% { transform: scale(0.8) rotate(-5deg); border-radius: 45% 55% 40% 60%; }
+        75% { transform: scale(1.3) rotate(3deg); border-radius: 50% 50% 60% 40%; }
+        100% { transform: scale(1) rotate(0deg); border-radius: 55% 45% 60% 40%; }
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 5;
+        max-width: 750px;
+    }
+    .hero-content h1 {
+        font-size: 50px;
+        margin-bottom: 15px;
+        font-weight: 700;
+    }
+    .hero-content p {
+        font-size: 20px;
+        opacity: 0.9;
+        margin-bottom: 25px;
+    }
+    .btn {
+        padding: 12px 28px;
+        background: #00e7ff;
+        color: #000;
+        font-weight: 600;
+        border-radius: 6px;
+        text-decoration: none;
+    }
+
+    /* ============ SECTION TITLE ============ */
+    .section-title {
+        text-align: center;
+        font-size: 35px;
+        margin: 70px 0 30px;
+        font-weight: 600;
+    }
+
+    /* ================= SERVICES ===================== */
+    #services .box-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px,1fr));
+        gap: 20px;
+        padding: 0 60px;
+    }
+    .service-box {
+        background: white;
+        padding: 25px;
+        border-radius: 8px;
+        box-shadow: 0 0 20px #00000010;
+        text-align: center;
+    }
+
+    /* ================= PORTFOLIO ==================== */
+    #portfolio .grid {
+        padding: 0 60px 60px;
+        display: grid;
+        grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+        gap: 20px;
+    }
+    .project {
+        background: #111;
+        color: white;
+        padding: 80px 0;
+        text-align: center;
+        border-radius: 8px;
+        font-size: 22px;
+    }
+
+    /* ================= ABOUT ======================== */
+    #about .flex {
+        display: flex;
+        gap: 40px;
+        padding: 0 60px 60px;
+        flex-wrap: wrap;
+    }
+    #about img {
+        width: 350px;
+        border-radius: 10px;
+    }
+    #about .text { flex: 1; }
+
+    /* ================= CONTACT ======================= */
+    #contact form {
+        max-width: 600px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    input, textarea {
+        padding: 12px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+    }
+    button {
+        background: #00eaff;
+        border: none;
+        padding: 12px;
+        cursor: pointer;
+        font-weight: 600;
+        border-radius: 5px;
+    }
+
+    footer {
+        text-align: center;
+        padding: 20px;
+        background: #000;
+        color: white;
+        margin-top: 50px;
+    }
+</style>
+
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav>
+    <div class="logo">PrimeTech</div>
+    <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#portfolio">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HERO WITH CORONA-LIKE CIRCLE -->
+<header>
+    <div class="corona-circle"></div>
+
+    <div class="hero-content">
+        <h1>We Build Digital Excellence</h1>
+        <p>Modern Web Development, Business Solutions & Premium Branding.</p>
+        <a href="#contact" class="btn">Let’s Work Together</a>
+    </div>
+</header>
+
+<!-- SERVICES -->
+<section id="services">
+    <h2 class="section-title">Our Services</h2>
+
+    <div class="box-container">
+        <div class="service-box">
+            <h3>Web Development</h3>
+            <p>High-quality, responsive, SEO-ready websites for your business.</p>
+        </div>
+        <div class="service-box">
+            <h3>Branding</h3>
+            <p>Logos, designs, and branding identity to make your business stand out.</p>
+        </div>
+        <div class="service-box">
+            <h3>Marketing</h3>
+            <p>Grow your business with targeted ads & modern digital marketing.</p>
+        </div>
+    </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section id="portfolio">
+    <h2 class="section-title">Our Projects</h2>
+    <div class="grid">
+        <div class="project">Project A</div>
+        <div class="project">Project B</div>
+        <div class="project">Project C</div>
+        <div class="project">Project D</div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+    <h2 class="section-title">About Us</h2>
+
+    <div class="flex">
+        <img src="https://images.unsplash.com/photo-1556761175-4b46a572b786?auto=format&fit=crop&w=800&q=80" />
+        <div class="text">
+            <h3>Creative Digital Agency</h3>
+            <p>We focus on delivering high-performance websites and digital solutions that help companies grow fast.</p>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+    <h2 class="section-title">Contact Us</h2>
+
+    <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+        <textarea placeholder="Message" required></textarea>
+        <button type="submit">Send Message</button>
+    </form>
+</section>
+
+<footer>© 2025 PrimeTech Agency. All rights reserved.</footer>
+
+</body>
+</html>
